@@ -1,54 +1,186 @@
+:root {
+    --bg-color-dark: #121212;
+    --bg-color-light: #ffffff;
+    --text-color-dark: #ffffff;
+    --text-color-light: #000000;
+    --accent-color: #00c6ff;
+}
+
+html[data-theme='dark'] {
+    --bg-color: var(--bg-color-dark);
+    --text-color: var(--text-color-dark);
+}
+
+html[data-theme='light'] {
+    --bg-color: var(--bg-color-light);
+    --text-color: var(--text-color-light);
+}
+
 body {
     margin: 0;
+    padding: 0;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #00c6ff, #0072ff);
-    color: white;
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+html {
+    height: auto;
+    scroll-behavior: smooth;
+}
+
+body.dark {
+    --toggle-bg: #444;
+    --toggle-bg-hover: #555;
+}
+
+body:not(.dark) {
+    --toggle-bg: #f0f0f0;
+    --toggle-bg-hover: #e0e0e0;
+}
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    background-color: var(--toggle-bg);
+    border: none;
+    border-radius: 9999px;
+    padding: 0.6rem 0.8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    background-color: var(--toggle-bg-hover);
+    transform: scale(1.05);
+}
+
+.icon,
+svg {
+    width: 20px;
+    height: 20px;
+    transition: stroke 0.3s ease, transform 0.3s ease;
+}
+
+svg {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.4s;
+}
+
+body.dark #moonIcon {
+    stroke: white;
+}
+
+body:not(.dark) #moonIcon {
+    stroke: black;
+}
+
+#particles-js {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+html[data-theme='light'] #particles-js canvas {
+    filter: brightness(0.2);
+}
+
+.overlay {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar,
+.logo,
+.nav-links a,
+.bio-content,
+section.about,
+section.contact {
+    background: var(--bg-color);
+    color: var(--text-color);
 }
 
 .navbar {
-    background: rgba(0, 0, 0, 0.7);
     padding: 1rem 2rem;
+}
+
+.container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .logo {
     font-size: 1.5rem;
-    color: #fff;
     text-decoration: none;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 5rem;
+    justify-content: center;
 }
 
 .nav-links a {
-    color: #fff;
     text-decoration: none;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: cyan;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: white;
 }
 
 .bio {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    height: 90vh;
     text-align: center;
 }
 
-.bio-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-}
-
+.bio-content,
 section.about,
 section.contact {
     padding: 4rem 2rem;
     max-width: 800px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.1);
+    margin: 2rem auto;
     border-radius: 8px;
 }
 
@@ -74,9 +206,31 @@ button {
     color: #0072ff;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s ease;
 }
 
-button:hover {
-    background-color: #e0e0e0;
+.hidden {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background: var(--bg-color);
+        color: var(--text-color);
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 }

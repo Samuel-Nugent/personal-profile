@@ -9,27 +9,45 @@
 </head>
 
 <body>
+    <div id="particles-js"></div>
+    <div class="overlay">
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">Samuel Nugent</a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
+        <nav class="navbar">
+            <div class="container">
+                <a href="index.html" class="logo">Samuel Nugent</a>
+                <div class="menu-toggle" id="mobile-menu">&#9776;</div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+                    <svg id="sunIcon" class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="orange">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 3v1m0 16v1m8.66-10h1M3.34 12h1M17.66 6.34l.7.7M5.64 18.36l.7.7M17.66 17.66l.7-.7M5.64 5.64l.7-.7M12 8a4 4 0 100 8 4 4 0 000-8z" />
+                    </svg>
+                    <svg id="moonIcon" class="icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
 
-    <section class="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/xnnvdnon" method="POST">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
+        <section class="contact">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/xnnvdnon" method="POST">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+    <script src="js/particles-init.js"></script>
     <script src="js/script.js"></script>
 </body>
 
