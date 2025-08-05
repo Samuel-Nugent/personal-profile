@@ -3,16 +3,71 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home - Samuel Nugent</title>
-    <script>
-      (function () {
-        try {
-          const savedTheme = localStorage.getItem("theme") || "light";
-          document.documentElement.setAttribute("data-theme", savedTheme);
-          document.body?.classList?.toggle("dark", savedTheme === "dark");
-        } catch (e) {}
-      })();
-    </script>
+    <meta
+      name="description"
+      content="Hi, I'm Samuel Nugent — a front-end developer creating fast, responsive websites with HTML, CSS, JavaScript, and React. Explore my portfolio and get in touch."
+    />
+    <meta
+      property="og:description"
+      content="Front-End Developer portfolio of Samuel Nugent — building modern, responsive websites with React, Tailwind CSS, and more."
+    />
+    <meta property="og:title" content="Samuel Nugent | Front-End Developer" />
+    <meta property="og:image" content="assets/favicon-dark.svg" />
+    <meta property="og:type" content="website" />
+    <meta name="robots" content="index, follow" />
+
+    <title>Samuel Nugent | Front-End Developer Portfolio</title>
+
+    <link
+      id="favicon"
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/favicon-light.svg"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-light-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-light-16x16.png"
+    />
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon-light.png" />
+
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="assets/favicon-dark.svg"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/favicon-dark-32x32.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/favicon-dark-16x16.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="assets/apple-touch-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -21,12 +76,23 @@
     <div class="overlay">
       <nav class="navbar">
         <div class="container">
-          <a href="index.html" class="logo">Samuel Nugent</a>
+          <a href="#home" class="logo">
+            <div class="logo-container">
+              <img
+                id="nav-logo"
+                class="logo-img"
+                src="assets/favicon-light.svg"
+                alt="Logo"
+              />
+              <span class="logo-text">Samuel Nugent</span>
+            </div>
+          </a>
           <div class="menu-toggle" id="mobile-menu">&#9776;</div>
           <ul class="nav-links" id="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About Me</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
           <button
             id="theme-toggle"
@@ -66,14 +132,274 @@
         </div>
       </nav>
 
-      <section class="bio">
-        <div class="bio-content">
-          <h1>Hi, I'm Sam</h1>
+      <section id="home" class="home">
+        <div class="section-content">
+          <img
+            id="home-logo"
+            class="logo-img home-logo"
+            src="assets/favicon-light.svg"
+            alt="Logo"
+          />
+          <h1>Hi, I’m Sam &mdash; a Front-End Developer.</h1>
           <p>
-            Creative Front-End Developer building modern, responsive websites.
+            I build fast, responsive websites using HTML, CSS, JavaScript, and
+            React.
           </p>
+          <div class="button-group">
+            <a href="#projects" class="btn">View Work</a>
+            <a href="#contact" class="btn">Contact Me</a>
+          </div>
         </div>
       </section>
+
+      <section id="about" class="about">
+        <div class="section-content">
+          <h2 class="animate-on-scroll">About Me</h2>
+          <p class="animate-on-scroll">
+            I’m a passionate front-end developer with a love for clean code and
+            intuitive design. I specialise in HTML, CSS, JavaScript, and React.
+            My focus is on building fast, accessible, and responsive web
+            applications. I’ve just started to venture into Vue and Angular.
+          </p>
+          <p class="animate-on-scroll">
+            Over the past year, I progressed through web developer bootcamp
+            where I learnt full stack development. I’ve worked on a range of
+            projects, from landing pages to complex dashboards, always with a
+            mindset of continuous improvement and user-first design.
+          </p>
+          <p class="animate-on-scroll">
+            I’m currently learning C#, Angular and Vue. my next aim is to gain
+            mastery of Wordpress, PHP and Figma to become a fully-versed
+            front-end developer. I’m always eager to explore new tech and refine
+            my current skillset. Whether it's optimisng performance or enhancing
+            accessibility, I enjoy crafting seamless user experiences.
+          </p>
+          <p class="animate-on-scroll">
+            When I’m not coding, you’ll probably find me learning something new
+            or sketching interface ideas. I'm currently open to new
+            opportunities and always excited to collaborate on meaningful
+            projects.
+          </p>
+          <div class="skills">
+            <h3 class="animate-on-scroll">Core Technologies</h3>
+
+            <div class="skills-category">
+              <h4 class="animate-on-scroll">Languages</h4>
+              <ul class="skills-list">
+                <li class="animate-on-scroll">
+                  <i class="fab fa-html5" aria-hidden="true"></i> HTML
+                </li>
+                <li class="animate-on-scroll">
+                  <i class="fab fa-css3-alt" aria-hidden="true"></i> CSS
+                </li>
+                <li class="animate-on-scroll">
+                  <i class="fab fa-js" aria-hidden="true"></i> JavaScript
+                </li>
+              </ul>
+            </div>
+
+            <div class="skills-category">
+              <h4 class="animate-on-scroll">Libraries</h4>
+              <ul class="skills-list">
+                <li class="animate-on-scroll">
+                  <i class="fab fa-react" aria-hidden="true"></i> React
+                </li>
+                <li class="animate-on-scroll">
+                  <i class="fas fa-wind" aria-hidden="true"></i> Tailwind CSS
+                </li>
+                <li class="animate-on-scroll">
+                  <i class="fab fa-bootstrap" aria-hidden="true"></i> Bootstrap
+                </li>
+              </ul>
+            </div>
+
+            <div class="skills-category">
+              <h4 class="animate-on-scroll">Development Tools</h4>
+              <ul class="skills-list">
+                <li class="animate-on-scroll">
+                  <i class="fab fa-git-alt" aria-hidden="true"></i> Git
+                </li>
+                <li class="animate-on-scroll">
+                  <i class="fab fa-github" aria-hidden="true"></i> GitHub
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="timeline">
+          <h3 class="animate-on-scroll">My Journey</h3>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="animate-on-scroll">2024 - Web Developer Bootcamp</h4>
+              <p class="animate-on-scroll">
+                Completed a full-stack bootcamp, learning HTML, CSS, JavaScript,
+                React, Node.js, MongoDB, and more.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="animate-on-scroll">
+                2025 and ongoing - Freelance Front-End Developer
+              </h4>
+              <p class="animate-on-scroll">
+                Focused on front-end technologies like HTML, CSS, JavaScript,
+                React, and Tailwind CSS.
+              </p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content">
+              <h4 class="animate-on-scroll">
+                Present - Continous Learning & Building
+              </h4>
+              <p class="animate-on-scroll">
+                Refining React knowledge. Exploring Angular, Vue, C#, PHP, and
+                tools like Figma and Webpack. Building projects to solidify my
+                skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <div class="section-content">
+          <h2 class="animate-on-scroll">Projects</h2>
+          <div class="project-grid">
+            <div class="project-card animate-on-scroll">
+              <h3>Online Tech Score</h3>
+              <p>
+                An online store made using React and Tailwind CSS purely to
+                serve as a demonstration of front-end design, functionality and
+                responsiveness.
+              </p>
+              <h4>Tech Stack:</h4>
+              <ul>
+                <li>React with React Router</li>
+                <li>Tailwind CSS for styling</li>
+                <li>Context API for state management</li>
+                <li>React Hot Toast for notifications</li>
+              </ul>
+              <img
+                src="assets/online-tech-store-project.png"
+                alt="Screenshot of the Online Tech Store web project"
+                class="project-image"
+              />
+              <div class="project-links">
+                <a href="https://online-tech-store.netlify.app/" target="_blank"
+                  >View Project</a
+                >
+                <a
+                  href="https://github.com/Samuel-Nugent/online-store"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github" style="font-size: 28px"></i>
+                </a>
+              </div>
+            </div>
+            <div class="project-card animate-on-scroll">
+              <h3>Business Organisation</h3>
+              <p>
+                A fully funcitonal website for a business organisation, made
+                using React and Tailwind CSS, giving them an online presence for
+                anyone wanting to learn more about them.
+              </p>
+              <h4>Tech Stack:</h4>
+              <ul>
+                <li>React with React Router</li>
+                <li>Tailwind CSS for styling</li>
+                <li>ShadCN</li>
+                <li>Framer Motion</li>
+              </ul>
+              <img
+                src="assets/business-organisation-project.png"
+                alt="Screenshot of the Business Organisation web project"
+                class="project-image"
+              />
+              <div class="project-links">
+                <a
+                  href="https://business-organisation.netlify.app/"
+                  target="_blank"
+                  >View Project</a
+                >
+                <a
+                  href="https://github.com/Samuel-Nugent/business-organisation"
+                  target="_blank"
+                  aria-label="GitHub"
+                >
+                  <i class="fab fa-github" style="font-size: 28px"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <div class="section-content">
+          <h2 class="animate-on-scroll">Contact Me</h2>
+          <form action="https://formspree.io/f/xnnvdnon" method="POST">
+            <input
+              class="animate-on-scroll"
+              type="text"
+              name="name"
+              placeholder="Your Name"
+              required
+            />
+            <input
+              class="animate-on-scroll"
+              type="email"
+              name="email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              class="animate-on-scroll"
+              name="message"
+              placeholder="Your Message"
+              required
+            ></textarea>
+            <button class="form-button animate-on-scroll" type="submit">
+              Send Message
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <footer class="footer">
+        <div class="footer-top">
+          <div class="footer-left">
+            <h3>Samuel Nugent</h3>
+            <p>Front-End Developer</p>
+          </div>
+          <div class="footer-right">
+            <a
+              href="https://github.com/Samuel-Nugent"
+              target="_blank"
+              aria-label="GitHub"
+              class="footer-icon"
+            >
+              <i class="fab fa-github" style="font-size: 28px"></i>
+            </a>
+            <button
+              onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+              class="footer-icon"
+              aria-label="Scroll to Top"
+            >
+              <i class="fas fa-arrow-up" style="font-size: 28px"></i>
+            </button>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Built with HTML, CSS and JavaScript</p>
+          <p>© 2025 Samuel Nugent. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script src="js/particles-init.js"></script>
